@@ -8,7 +8,7 @@ object Form1: TForm1
   ClientHeight = 674
   ClientWidth = 1000
   OnCreate = FormCreate
-  LCLVersion = '1.6.2.0'
+  LCLVersion = '1.6.0.4'
   object SG_Accum: TStringGrid
     Left = 448
     Height = 72
@@ -50,31 +50,31 @@ object Form1: TForm1
   end
   object Label2: TLabel
     Left = 448
-    Height = 17
+    Height = 13
     Top = 8
-    Width = 52
+    Width = 44
     Caption = 'Главный'
     ParentColor = False
   end
   object Label3: TLabel
     Left = 454
-    Height = 17
+    Height = 13
     Top = 232
-    Width = 96
+    Width = 82
     Caption = 'Первый регистр'
     ParentColor = False
   end
   object Label4: TLabel
     Left = 448
-    Height = 17
+    Height = 13
     Top = 456
-    Width = 92
+    Width = 79
     Caption = 'Второй регистр'
     ParentColor = False
   end
   object Edit_PP: TEdit
     Left = 8
-    Height = 27
+    Height = 21
     Top = 584
     Width = 416
     ReadOnly = True
@@ -83,15 +83,15 @@ object Form1: TForm1
   end
   object Label6: TLabel
     Left = 8
-    Height = 17
+    Height = 13
     Top = 562
-    Width = 84
+    Width = 72
     Caption = 'Диапазон RNS'
     ParentColor = False
   end
   object Edit_Accum_dec: TEdit
     Left = 584
-    Height = 27
+    Height = 21
     Top = 136
     Width = 408
     TabOrder = 4
@@ -99,15 +99,15 @@ object Form1: TForm1
   end
   object Label7: TLabel
     Left = 448
-    Height = 17
+    Height = 13
     Top = 136
-    Width = 96
+    Width = 81
     Caption = 'Значение 10-СС'
     ParentColor = False
   end
   object Edit_Accum_rank: TEdit
     Left = 582
-    Height = 27
+    Height = 21
     Top = 168
     Width = 410
     ReadOnly = True
@@ -116,15 +116,15 @@ object Form1: TForm1
   end
   object Label9: TLabel
     Left = 546
-    Height = 17
+    Height = 13
     Top = 168
-    Width = 27
+    Width = 23
     Caption = 'Ранг'
     ParentColor = False
   end
   object Edit_Accum_CRT: TEdit
     Left = 528
-    Height = 27
+    Height = 21
     Top = 200
     Width = 464
     ReadOnly = True
@@ -133,9 +133,9 @@ object Form1: TForm1
   end
   object Label10: TLabel
     Left = 448
-    Height = 17
+    Height = 13
     Top = 200
-    Width = 85
+    Width = 72
     Caption = 'Значение КТО'
     ParentColor = False
   end
@@ -267,7 +267,7 @@ object Form1: TForm1
   end
   object Edit_R1_dec: TEdit
     Left = 584
-    Height = 27
+    Height = 21
     Top = 360
     Width = 408
     TabOrder = 21
@@ -275,15 +275,15 @@ object Form1: TForm1
   end
   object Label8: TLabel
     Left = 448
-    Height = 17
+    Height = 13
     Top = 360
-    Width = 96
+    Width = 81
     Caption = 'Значение 10-СС'
     ParentColor = False
   end
   object Edit_R1_rank: TEdit
     Left = 582
-    Height = 27
+    Height = 21
     Top = 392
     Width = 410
     ReadOnly = True
@@ -292,15 +292,15 @@ object Form1: TForm1
   end
   object Label12: TLabel
     Left = 546
-    Height = 17
+    Height = 13
     Top = 392
-    Width = 27
+    Width = 23
     Caption = 'Ранг'
     ParentColor = False
   end
   object Edit_R1_CRT: TEdit
     Left = 528
-    Height = 27
+    Height = 21
     Top = 424
     Width = 464
     ReadOnly = True
@@ -309,15 +309,15 @@ object Form1: TForm1
   end
   object Label13: TLabel
     Left = 448
-    Height = 17
+    Height = 13
     Top = 424
-    Width = 85
+    Width = 72
     Caption = 'Значение КТО'
     ParentColor = False
   end
   object Edit_R2_dec: TEdit
     Left = 584
-    Height = 27
+    Height = 21
     Top = 584
     Width = 408
     TabOrder = 24
@@ -325,15 +325,15 @@ object Form1: TForm1
   end
   object Label14: TLabel
     Left = 453
-    Height = 17
+    Height = 13
     Top = 584
-    Width = 96
+    Width = 81
     Caption = 'Значение 10-СС'
     ParentColor = False
   end
   object Edit_R2_rank: TEdit
     Left = 582
-    Height = 27
+    Height = 21
     Top = 616
     Width = 410
     ReadOnly = True
@@ -342,15 +342,15 @@ object Form1: TForm1
   end
   object Label15: TLabel
     Left = 546
-    Height = 17
+    Height = 13
     Top = 616
-    Width = 27
+    Width = 23
     Caption = 'Ранг'
     ParentColor = False
   end
   object Edit_R2_CRT: TEdit
     Left = 528
-    Height = 27
+    Height = 21
     Top = 648
     Width = 464
     ReadOnly = True
@@ -359,9 +359,9 @@ object Form1: TForm1
   end
   object Label16: TLabel
     Left = 448
-    Height = 17
+    Height = 13
     Top = 648
-    Width = 85
+    Width = 72
     Caption = 'Значение КТО'
     ParentColor = False
   end
@@ -536,13 +536,13 @@ object Form1: TForm1
     DefaultColWidth = 32
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goSmoothScroll]
     RowCount = 55
-    ScrollBars = ssVertical
+    ScrollBars = ssBoth
     TabOrder = 45
     OnEditingDone = SG_P_basisEditingDone
   end
   object Edit_n: TEdit
     Left = 112
-    Height = 27
+    Height = 21
     Top = 616
     Width = 80
     TabOrder = 46
@@ -550,9 +550,9 @@ object Form1: TForm1
   end
   object Label1: TLabel
     Left = 8
-    Height = 17
+    Height = 13
     Top = 616
-    Width = 95
+    Width = 80
     Caption = 'Оснований СОК'
     ParentColor = False
   end
@@ -585,15 +585,15 @@ object Form1: TForm1
   end
   object Label5: TLabel
     Left = 8
-    Height = 17
+    Height = 13
     Top = 648
-    Width = 95
+    Width = 76
     Caption = 'В расширенной'
     ParentColor = False
   end
   object Edit_n_ext: TEdit
     Left = 112
-    Height = 27
+    Height = 21
     Top = 644
     Width = 80
     TabOrder = 50

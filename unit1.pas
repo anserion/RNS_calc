@@ -250,7 +250,7 @@ begin
      for k:=n+1 to n_ext do SG_P_basis.Cells[2,k]:='техническое основание (расширенная СОК)';
 
      SG_P_basis.AutoSizeColumn(1);
-     SG_P_basis.ColWidths[2]:=SG_P_basis.Width-SG_P_basis.ColWidths[0]-SG_P_basis.ColWidths[1]-20;
+     SG_P_basis.ColWidths[2]:=SG_P_basis.Width-SG_P_basis.ColWidths[0]-SG_P_basis.ColWidths[1]-40;
 
      for k:=1 to n do Accum_RNS[k]:=Accum_RNS[k] mod P[p_sv[k]];
      for k:=1 to n do R1_RNS[k]:=R1_RNS[k] mod P[p_sv[k]];
