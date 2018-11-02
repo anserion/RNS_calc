@@ -1,0 +1,611 @@
+object Form1: TForm1
+  Left = 18
+  Height = 674
+  Top = 35
+  Width = 1000
+  BorderStyle = bsDialog
+  Caption = 'Калькулятор СОК (RNS)'
+  ClientHeight = 674
+  ClientWidth = 1000
+  OnCreate = FormCreate
+  LCLVersion = '1.6.2.0'
+  object SG_Accum: TStringGrid
+    Left = 448
+    Height = 72
+    Top = 64
+    Width = 544
+    ColCount = 55
+    DefaultColWidth = 32
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goSmoothScroll]
+    RowCount = 2
+    ScrollBars = ssHorizontal
+    TabOrder = 0
+    OnEditingDone = SG_AccumEditingDone
+  end
+  object SG_R1: TStringGrid
+    Left = 448
+    Height = 72
+    Top = 280
+    Width = 544
+    ColCount = 55
+    DefaultColWidth = 32
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goSmoothScroll]
+    RowCount = 2
+    ScrollBars = ssHorizontal
+    TabOrder = 1
+    OnEditingDone = SG_R1EditingDone
+  end
+  object SG_R2: TStringGrid
+    Left = 448
+    Height = 72
+    Top = 504
+    Width = 544
+    ColCount = 55
+    DefaultColWidth = 32
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goSmoothScroll]
+    RowCount = 2
+    ScrollBars = ssHorizontal
+    TabOrder = 2
+    OnEditingDone = SG_R2EditingDone
+  end
+  object Label2: TLabel
+    Left = 448
+    Height = 17
+    Top = 8
+    Width = 52
+    Caption = 'Главный'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 454
+    Height = 17
+    Top = 232
+    Width = 96
+    Caption = 'Первый регистр'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 448
+    Height = 17
+    Top = 456
+    Width = 92
+    Caption = 'Второй регистр'
+    ParentColor = False
+  end
+  object Edit_PP: TEdit
+    Left = 8
+    Height = 27
+    Top = 584
+    Width = 416
+    ReadOnly = True
+    TabOrder = 3
+    Text = 'Edit_PP'
+  end
+  object Label6: TLabel
+    Left = 8
+    Height = 17
+    Top = 562
+    Width = 84
+    Caption = 'Диапазон RNS'
+    ParentColor = False
+  end
+  object Edit_Accum_dec: TEdit
+    Left = 584
+    Height = 27
+    Top = 136
+    Width = 408
+    TabOrder = 4
+    Text = 'Edit_Accum_dec'
+  end
+  object Label7: TLabel
+    Left = 448
+    Height = 17
+    Top = 136
+    Width = 96
+    Caption = 'Значение 10-СС'
+    ParentColor = False
+  end
+  object Edit_Accum_rank: TEdit
+    Left = 582
+    Height = 27
+    Top = 168
+    Width = 410
+    ReadOnly = True
+    TabOrder = 5
+    Text = 'Edit_Accum_rank'
+  end
+  object Label9: TLabel
+    Left = 546
+    Height = 17
+    Top = 168
+    Width = 27
+    Caption = 'Ранг'
+    ParentColor = False
+  end
+  object Edit_Accum_CRT: TEdit
+    Left = 528
+    Height = 27
+    Top = 200
+    Width = 464
+    ReadOnly = True
+    TabOrder = 6
+    Text = 'Edit_Accum_CRT'
+  end
+  object Label10: TLabel
+    Left = 448
+    Height = 17
+    Top = 200
+    Width = 85
+    Caption = 'Значение КТО'
+    ParentColor = False
+  end
+  object BTN_accum_to_mem: TButton
+    Left = 448
+    Height = 25
+    Top = 32
+    Width = 75
+    Caption = 'В память'
+    OnClick = BTN_accum_to_memClick
+    TabOrder = 7
+  end
+  object BTN_accum_from_mem: TButton
+    Left = 520
+    Height = 25
+    Top = 32
+    Width = 75
+    Caption = 'Из памяти'
+    OnClick = BTN_accum_from_memClick
+    TabOrder = 8
+  end
+  object BTN_accum_to_R1: TButton
+    Left = 688
+    Height = 25
+    Top = 32
+    Width = 75
+    Caption = 'В регистр 1'
+    OnClick = BTN_accum_to_R1Click
+    TabOrder = 9
+  end
+  object BTN_accum_from_R1: TButton
+    Left = 760
+    Height = 25
+    Top = 32
+    Width = 83
+    Caption = 'Из регистра 1'
+    OnClick = BTN_accum_from_R1Click
+    TabOrder = 10
+  end
+  object BTN_accum_to_R2: TButton
+    Left = 840
+    Height = 25
+    Top = 32
+    Width = 75
+    Caption = 'В регистр 2'
+    OnClick = BTN_accum_to_R2Click
+    TabOrder = 11
+  end
+  object BTN_accum_from_R2: TButton
+    Left = 909
+    Height = 25
+    Top = 32
+    Width = 83
+    Caption = 'Из регистра 2'
+    OnClick = BTN_accum_from_R2Click
+    TabOrder = 12
+  end
+  object BTN_accum_swap_mem: TButton
+    Left = 592
+    Height = 25
+    Top = 32
+    Width = 91
+    Caption = 'Обмен память'
+    OnClick = BTN_accum_swap_memClick
+    TabOrder = 13
+  end
+  object BTN_R1_to_mem: TButton
+    Left = 448
+    Height = 25
+    Top = 248
+    Width = 75
+    Caption = 'В память'
+    OnClick = BTN_R1_to_memClick
+    TabOrder = 14
+  end
+  object BTN_R1_from_mem: TButton
+    Left = 520
+    Height = 25
+    Top = 248
+    Width = 75
+    Caption = 'Из памяти'
+    OnClick = BTN_R1_from_memClick
+    TabOrder = 15
+  end
+  object BTN_R2_swap_mem1: TButton
+    Left = 592
+    Height = 25
+    Top = 248
+    Width = 91
+    Caption = 'Обмен память'
+    OnClick = BTN_R2_swap_mem1Click
+    TabOrder = 16
+  end
+  object BTN_R1_to_accum: TButton
+    Left = 688
+    Height = 25
+    Top = 248
+    Width = 75
+    Caption = 'В главный'
+    OnClick = BTN_R1_to_accumClick
+    TabOrder = 17
+  end
+  object BTN_R1_from_accum: TButton
+    Left = 760
+    Height = 25
+    Top = 248
+    Width = 83
+    Caption = 'Из главного'
+    OnClick = BTN_R1_from_accumClick
+    TabOrder = 18
+  end
+  object BTN_R1_to_R2: TButton
+    Left = 840
+    Height = 25
+    Top = 248
+    Width = 75
+    Caption = 'В регистр 2'
+    OnClick = BTN_R1_to_R2Click
+    TabOrder = 19
+  end
+  object BTN_R1_from_R2: TButton
+    Left = 909
+    Height = 25
+    Top = 248
+    Width = 83
+    Caption = 'Из регистра 2'
+    OnClick = BTN_R1_from_R2Click
+    TabOrder = 20
+  end
+  object Edit_R1_dec: TEdit
+    Left = 584
+    Height = 27
+    Top = 360
+    Width = 408
+    TabOrder = 21
+    Text = 'Edit_R1_dec'
+  end
+  object Label8: TLabel
+    Left = 448
+    Height = 17
+    Top = 360
+    Width = 96
+    Caption = 'Значение 10-СС'
+    ParentColor = False
+  end
+  object Edit_R1_rank: TEdit
+    Left = 582
+    Height = 27
+    Top = 392
+    Width = 410
+    ReadOnly = True
+    TabOrder = 22
+    Text = 'Edit_R1_rank'
+  end
+  object Label12: TLabel
+    Left = 546
+    Height = 17
+    Top = 392
+    Width = 27
+    Caption = 'Ранг'
+    ParentColor = False
+  end
+  object Edit_R1_CRT: TEdit
+    Left = 528
+    Height = 27
+    Top = 424
+    Width = 464
+    ReadOnly = True
+    TabOrder = 23
+    Text = 'Edit_R1_CRT'
+  end
+  object Label13: TLabel
+    Left = 448
+    Height = 17
+    Top = 424
+    Width = 85
+    Caption = 'Значение КТО'
+    ParentColor = False
+  end
+  object Edit_R2_dec: TEdit
+    Left = 584
+    Height = 27
+    Top = 584
+    Width = 408
+    TabOrder = 24
+    Text = 'Edit_R2_dec'
+  end
+  object Label14: TLabel
+    Left = 453
+    Height = 17
+    Top = 584
+    Width = 96
+    Caption = 'Значение 10-СС'
+    ParentColor = False
+  end
+  object Edit_R2_rank: TEdit
+    Left = 582
+    Height = 27
+    Top = 616
+    Width = 410
+    ReadOnly = True
+    TabOrder = 25
+    Text = 'Edit_R2_rank'
+  end
+  object Label15: TLabel
+    Left = 546
+    Height = 17
+    Top = 616
+    Width = 27
+    Caption = 'Ранг'
+    ParentColor = False
+  end
+  object Edit_R2_CRT: TEdit
+    Left = 528
+    Height = 27
+    Top = 648
+    Width = 464
+    ReadOnly = True
+    TabOrder = 26
+    Text = 'Edit_R2_CRT'
+  end
+  object Label16: TLabel
+    Left = 448
+    Height = 17
+    Top = 648
+    Width = 85
+    Caption = 'Значение КТО'
+    ParentColor = False
+  end
+  object BTN_R2_to_mem: TButton
+    Left = 448
+    Height = 25
+    Top = 472
+    Width = 75
+    Caption = 'В память'
+    OnClick = BTN_R2_to_memClick
+    TabOrder = 27
+  end
+  object BTN_R2_from_mem: TButton
+    Left = 520
+    Height = 25
+    Top = 472
+    Width = 75
+    Caption = 'Из памяти'
+    OnClick = BTN_R2_from_memClick
+    TabOrder = 28
+  end
+  object BTN_R2_swap_mem: TButton
+    Left = 592
+    Height = 25
+    Top = 472
+    Width = 91
+    Caption = 'Обмен память'
+    OnClick = BTN_R2_swap_memClick
+    TabOrder = 29
+  end
+  object BTN_R2_to_accum: TButton
+    Left = 688
+    Height = 25
+    Top = 472
+    Width = 75
+    Caption = 'В главный'
+    OnClick = BTN_R2_to_accumClick
+    TabOrder = 30
+  end
+  object BTN_R2_from_accum: TButton
+    Left = 760
+    Height = 25
+    Top = 472
+    Width = 83
+    Caption = 'Из главного'
+    OnClick = BTN_R2_from_accumClick
+    TabOrder = 31
+  end
+  object BTN_R2_to_R1: TButton
+    Left = 840
+    Height = 25
+    Top = 472
+    Width = 75
+    Caption = 'В регистр 1'
+    OnClick = BTN_R2_to_R1Click
+    TabOrder = 32
+  end
+  object BTN_R2_from_R1: TButton
+    Left = 909
+    Height = 25
+    Top = 472
+    Width = 83
+    Caption = 'Из регистра 1'
+    OnClick = BTN_R2_from_R1Click
+    TabOrder = 33
+  end
+  object BTN_add: TButton
+    Left = 576
+    Height = 25
+    Top = 0
+    Width = 75
+    Caption = 'Сумма'
+    OnClick = BTN_addClick
+    TabOrder = 34
+  end
+  object BTN_sub: TButton
+    Left = 648
+    Height = 25
+    Top = 0
+    Width = 75
+    Caption = 'Разность'
+    OnClick = BTN_subClick
+    TabOrder = 35
+  end
+  object BTN_mul: TButton
+    Left = 720
+    Height = 25
+    Top = 0
+    Width = 91
+    Caption = 'Произведение'
+    OnClick = BTN_mulClick
+    TabOrder = 36
+  end
+  object BTN_div: TButton
+    Left = 808
+    Height = 25
+    Top = 0
+    Width = 112
+    Caption = 'Неполное частное'
+    OnClick = BTN_divClick
+    TabOrder = 37
+  end
+  object BTN_rem: TButton
+    Left = 917
+    Height = 25
+    Top = 0
+    Width = 75
+    Caption = 'Остаток'
+    OnClick = BTN_remClick
+    TabOrder = 38
+  end
+  object BTN_accum_to_RNS: TButton
+    Left = 547
+    Height = 25
+    Top = 136
+    Width = 30
+    Caption = 'OK'
+    OnClick = BTN_accum_to_RNSClick
+    TabOrder = 39
+  end
+  object BTN_R1_to_RNS: TButton
+    Left = 547
+    Height = 25
+    Top = 360
+    Width = 30
+    Caption = 'OK'
+    OnClick = BTN_R1_to_RNSClick
+    TabOrder = 40
+  end
+  object BTN_R2_to_RNS: TButton
+    Left = 547
+    Height = 25
+    Top = 584
+    Width = 30
+    Caption = 'OK'
+    OnClick = BTN_R2_to_RNSClick
+    TabOrder = 41
+  end
+  object BTN_accum_clear: TButton
+    Left = 448
+    Height = 25
+    Top = 166
+    Width = 75
+    Caption = 'Очистить'
+    OnClick = BTN_accum_clearClick
+    TabOrder = 42
+  end
+  object BTN_R1_clear: TButton
+    Left = 448
+    Height = 25
+    Top = 390
+    Width = 75
+    Caption = 'Очистить'
+    OnClick = BTN_R1_clearClick
+    TabOrder = 43
+  end
+  object BTN_R2_clear: TButton
+    Left = 448
+    Height = 25
+    Top = 614
+    Width = 75
+    Caption = 'Очистить'
+    OnClick = BTN_R2_clearClick
+    TabOrder = 44
+  end
+  object SG_P_basis: TStringGrid
+    Left = 8
+    Height = 560
+    Top = 0
+    Width = 434
+    ColCount = 3
+    DefaultColWidth = 32
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goSmoothScroll]
+    RowCount = 55
+    ScrollBars = ssVertical
+    TabOrder = 45
+    OnEditingDone = SG_P_basisEditingDone
+  end
+  object Edit_n: TEdit
+    Left = 112
+    Height = 27
+    Top = 616
+    Width = 80
+    TabOrder = 46
+    Text = 'Edit_n'
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 17
+    Top = 616
+    Width = 95
+    Caption = 'Оснований СОК'
+    ParentColor = False
+  end
+  object BTN_primes: TButton
+    Left = 232
+    Height = 25
+    Top = 616
+    Width = 96
+    Caption = 'Простые числа'
+    OnClick = BTN_primesClick
+    TabOrder = 47
+  end
+  object BTN_n: TButton
+    Left = 192
+    Height = 25
+    Top = 616
+    Width = 30
+    Caption = 'OK'
+    OnClick = BTN_nClick
+    TabOrder = 48
+  end
+  object BTN_cmp: TButton
+    Left = 502
+    Height = 25
+    Top = 0
+    Width = 75
+    Caption = 'Сравнение'
+    OnClick = BTN_cmpClick
+    TabOrder = 49
+  end
+  object Label5: TLabel
+    Left = 8
+    Height = 17
+    Top = 648
+    Width = 95
+    Caption = 'В расширенной'
+    ParentColor = False
+  end
+  object Edit_n_ext: TEdit
+    Left = 112
+    Height = 27
+    Top = 644
+    Width = 80
+    TabOrder = 50
+    Text = 'Edit_n_ext'
+  end
+  object BTN_n_ext: TButton
+    Left = 192
+    Height = 25
+    Top = 644
+    Width = 30
+    Caption = 'OK'
+    OnClick = BTN_n_extClick
+    TabOrder = 51
+  end
+end
