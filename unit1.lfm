@@ -1,21 +1,21 @@
 object Form1: TForm1
-  Left = 18
-  Height = 671
-  Top = 35
-  Width = 1000
+  Left = 2
+  Height = 573
+  Top = 2
+  Width = 982
   BorderStyle = bsDialog
   Caption = 'Калькулятор СОК (RNS)'
-  ClientHeight = 671
-  ClientWidth = 1000
+  ClientHeight = 573
+  ClientWidth = 982
   OnCreate = FormCreate
-  LCLVersion = '1.6.2.0'
+  LCLVersion = '1.6.0.4'
   object Panel_accum: TPanel
-    Left = 448
-    Height = 218
+    Left = 441
+    Height = 194
     Top = 0
-    Width = 550
-    ClientHeight = 218
-    ClientWidth = 550
+    Width = 544
+    ClientHeight = 194
+    ClientWidth = 544
     TabOrder = 0
     object SG_Accum: TStringGrid
       Left = 8
@@ -32,15 +32,15 @@ object Form1: TForm1
     end
     object Label2: TLabel
       Left = 8
-      Height = 17
+      Height = 15
       Top = 0
-      Width = 101
+      Width = 94
       Caption = 'Главный регистр'
       ParentColor = False
     end
     object Edit_Accum_dec: TEdit
       Left = 48
-      Height = 27
+      Height = 23
       Top = 120
       Width = 394
       NumbersOnly = True
@@ -49,9 +49,9 @@ object Form1: TForm1
       Text = 'Edit_Accum_dec'
     end
     object Edit_Accum_rank: TEdit
-      Left = 48
-      Height = 27
-      Top = 150
+      Left = 47
+      Height = 23
+      Top = 144
       Width = 394
       ReadOnly = True
       TabOrder = 2
@@ -59,16 +59,16 @@ object Form1: TForm1
     end
     object Label9: TLabel
       Left = 8
-      Height = 17
-      Top = 150
-      Width = 27
+      Height = 15
+      Top = 144
+      Width = 25
       Caption = 'Ранг'
       ParentColor = False
     end
     object Edit_Accum_CRT: TEdit
       Left = 48
-      Height = 27
-      Top = 180
+      Height = 23
+      Top = 168
       Width = 394
       ReadOnly = True
       TabOrder = 3
@@ -76,8 +76,8 @@ object Form1: TForm1
     end
     object Label10: TLabel
       Left = 8
-      Height = 17
-      Top = 180
+      Height = 15
+      Top = 168
       Width = 23
       Caption = 'КТО'
       ParentColor = False
@@ -85,7 +85,7 @@ object Form1: TForm1
     object BTN_accum_to_mem: TButton
       Left = 450
       Height = 25
-      Top = 8
+      Top = 0
       Width = 91
       Caption = 'В память'
       OnClick = BTN_accum_to_memClick
@@ -94,7 +94,7 @@ object Form1: TForm1
     object BTN_accum_from_mem: TButton
       Left = 450
       Height = 25
-      Top = 32
+      Top = 24
       Width = 91
       Caption = 'Из памяти'
       OnClick = BTN_accum_from_memClick
@@ -103,7 +103,7 @@ object Form1: TForm1
     object BTN_accum_swap_mem: TButton
       Left = 450
       Height = 25
-      Top = 56
+      Top = 48
       Width = 91
       Caption = 'Обмен память'
       OnClick = BTN_accum_swap_memClick
@@ -111,17 +111,17 @@ object Form1: TForm1
     end
     object Label7: TLabel
       Left = 8
-      Height = 17
+      Height = 15
       Top = 118
-      Width = 34
+      Width = 33
       Caption = '10-СС'
       ParentColor = False
     end
     object BTN_rem: TButton
       Left = 450
       Height = 25
-      Top = 184
-      Width = 94
+      Top = 166
+      Width = 91
       Caption = 'Остаток'
       OnClick = BTN_remClick
       TabOrder = 7
@@ -129,8 +129,8 @@ object Form1: TForm1
     object BTN_div: TButton
       Left = 450
       Height = 25
-      Top = 160
-      Width = 94
+      Top = 144
+      Width = 91
       Caption = 'Частное'
       OnClick = BTN_divClick
       TabOrder = 8
@@ -138,8 +138,8 @@ object Form1: TForm1
     object BTN_mul: TButton
       Left = 450
       Height = 25
-      Top = 136
-      Width = 94
+      Top = 120
+      Width = 91
       Caption = 'Произведение'
       OnClick = BTN_mulClick
       TabOrder = 9
@@ -147,8 +147,8 @@ object Form1: TForm1
     object BTN_sub: TButton
       Left = 450
       Height = 25
-      Top = 112
-      Width = 94
+      Top = 96
+      Width = 91
       Caption = 'Разность'
       OnClick = BTN_subClick
       TabOrder = 10
@@ -156,23 +156,23 @@ object Form1: TForm1
     object BTN_add: TButton
       Left = 450
       Height = 25
-      Top = 88
-      Width = 94
+      Top = 72
+      Width = 91
       Caption = 'Сумма'
       OnClick = BTN_addClick
       TabOrder = 11
     end
   end
   object Panel_mem: TPanel
-    Left = -6
-    Height = 218
-    Top = 448
-    Width = 448
-    ClientHeight = 218
-    ClientWidth = 448
+    Left = 0
+    Height = 186
+    Top = 388
+    Width = 441
+    ClientHeight = 186
+    ClientWidth = 441
     TabOrder = 1
     object SG_mem: TStringGrid
-      Left = 8
+      Left = 6
       Height = 96
       Top = 16
       Width = 434
@@ -186,17 +186,17 @@ object Form1: TForm1
     end
     object Label11: TLabel
       Left = 8
-      Height = 17
+      Height = 15
       Top = 0
-      Width = 45
+      Width = 41
       Caption = 'Память'
       ParentColor = False
     end
     object Edit_mem_dec: TEdit
-      Left = 46
-      Height = 27
-      Top = 120
-      Width = 394
+      Left = 48
+      Height = 23
+      Top = 112
+      Width = 392
       NumbersOnly = True
       OnChange = Edit_mem_decChange
       TabOrder = 1
@@ -204,58 +204,58 @@ object Form1: TForm1
     end
     object Edit_mem_rank: TEdit
       Left = 46
-      Height = 27
-      Top = 150
-      Width = 396
+      Height = 23
+      Top = 136
+      Width = 394
       ReadOnly = True
       TabOrder = 2
       Text = 'Edit_mem_rank'
     end
     object Label17: TLabel
-      Left = 6
-      Height = 17
-      Top = 152
-      Width = 27
+      Left = 8
+      Height = 15
+      Top = 136
+      Width = 25
       Caption = 'Ранг'
       ParentColor = False
     end
     object Edit_mem_CRT: TEdit
       Left = 46
-      Height = 27
-      Top = 182
+      Height = 23
+      Top = 160
       Width = 394
       ReadOnly = True
       TabOrder = 3
       Text = 'Edit_mem_CRT'
     end
     object Label18: TLabel
-      Left = 6
-      Height = 17
-      Top = 182
+      Left = 8
+      Height = 15
+      Top = 160
       Width = 23
       Caption = 'КТО'
       ParentColor = False
     end
     object Label19: TLabel
-      Left = 6
-      Height = 17
-      Top = 120
-      Width = 34
+      Left = 8
+      Height = 15
+      Top = 114
+      Width = 33
       Caption = '10-СС'
       ParentColor = False
     end
   end
   object Panel_R1: TPanel
-    Left = 448
-    Height = 218
-    Top = 224
-    Width = 550
-    ClientHeight = 218
-    ClientWidth = 550
+    Left = 441
+    Height = 188
+    Top = 200
+    Width = 544
+    ClientHeight = 188
+    ClientWidth = 544
     TabOrder = 2
     object SG_R1: TStringGrid
       Left = 8
-      Height = 96
+      Height = 95
       Top = 16
       Width = 434
       ColCount = 55
@@ -268,52 +268,52 @@ object Form1: TForm1
     end
     object Label3: TLabel
       Left = 8
-      Height = 17
+      Height = 15
       Top = 0
-      Width = 96
+      Width = 90
       Caption = 'Первый регистр'
       ParentColor = False
     end
     object BTN_R1_to_mem: TButton
-      Left = 456
+      Left = 450
       Height = 25
-      Top = 16
+      Top = 8
       Width = 91
       Caption = 'В память'
       OnClick = BTN_R1_to_memClick
       TabOrder = 1
     end
     object BTN_R1_from_mem: TButton
-      Left = 456
+      Left = 450
       Height = 25
-      Top = 40
+      Top = 32
       Width = 91
       Caption = 'Из памяти'
       OnClick = BTN_R1_from_memClick
       TabOrder = 2
     end
     object BTN_R2_swap_mem1: TButton
-      Left = 456
+      Left = 450
       Height = 25
-      Top = 64
+      Top = 56
       Width = 91
       Caption = 'Обмен память'
       OnClick = BTN_R2_swap_mem1Click
       TabOrder = 3
     end
     object BTN_R1_to_R2: TButton
-      Left = 456
+      Left = 450
       Height = 25
-      Top = 96
+      Top = 86
       Width = 91
       Caption = 'В регистр 2'
       OnClick = BTN_R1_to_R2Click
       TabOrder = 4
     end
     object BTN_R1_from_R2: TButton
-      Left = 456
+      Left = 450
       Height = 25
-      Top = 120
+      Top = 110
       Width = 91
       Caption = 'Из регистра 2'
       OnClick = BTN_R1_from_R2Click
@@ -321,8 +321,8 @@ object Form1: TForm1
     end
     object Edit_R1_dec: TEdit
       Left = 45
-      Height = 27
-      Top = 120
+      Height = 23
+      Top = 112
       Width = 397
       NumbersOnly = True
       OnChange = Edit_R1_decChange
@@ -331,16 +331,16 @@ object Form1: TForm1
     end
     object Label8: TLabel
       Left = 8
-      Height = 17
-      Top = 120
-      Width = 34
+      Height = 15
+      Top = 112
+      Width = 33
       Caption = '10-СС'
       ParentColor = False
     end
     object Edit_R1_rank: TEdit
-      Left = 45
-      Height = 27
-      Top = 152
+      Left = 46
+      Height = 23
+      Top = 136
       Width = 396
       ReadOnly = True
       TabOrder = 7
@@ -348,16 +348,16 @@ object Form1: TForm1
     end
     object Label12: TLabel
       Left = 8
-      Height = 17
-      Top = 152
-      Width = 27
+      Height = 15
+      Top = 136
+      Width = 25
       Caption = 'Ранг'
       ParentColor = False
     end
     object Edit_R1_CRT: TEdit
-      Left = 45
-      Height = 27
-      Top = 184
+      Left = 44
+      Height = 23
+      Top = 160
       Width = 397
       ReadOnly = True
       TabOrder = 8
@@ -365,38 +365,38 @@ object Form1: TForm1
     end
     object Label13: TLabel
       Left = 8
-      Height = 17
-      Top = 184
+      Height = 15
+      Top = 160
       Width = 23
       Caption = 'КТО'
       ParentColor = False
     end
     object BTN_R1_swap_R2: TButton
-      Left = 456
+      Left = 450
       Height = 25
-      Top = 144
+      Top = 134
       Width = 91
       Caption = 'Обмен'
       OnClick = BTN_R1_swap_R2Click
       TabOrder = 9
     end
     object BTN_cmp: TButton
-      Left = 456
+      Left = 450
       Height = 25
-      Top = 176
-      Width = 88
+      Top = 158
+      Width = 91
       Caption = 'Сравнение'
       OnClick = BTN_cmpClick
       TabOrder = 10
     end
   end
   object Panel_R2: TPanel
-    Left = 448
-    Height = 218
-    Top = 448
-    Width = 550
-    ClientHeight = 218
-    ClientWidth = 550
+    Left = 441
+    Height = 186
+    Top = 388
+    Width = 544
+    ClientHeight = 186
+    ClientWidth = 544
     TabOrder = 3
     object SG_R2: TStringGrid
       Left = 8
@@ -413,16 +413,16 @@ object Form1: TForm1
     end
     object Label4: TLabel
       Left = 11
-      Height = 17
+      Height = 15
       Top = 0
-      Width = 92
+      Width = 86
       Caption = 'Второй регистр'
       ParentColor = False
     end
     object Edit_R2_dec: TEdit
       Left = 45
-      Height = 27
-      Top = 120
+      Height = 23
+      Top = 112
       Width = 397
       NumbersOnly = True
       OnChange = Edit_R2_decChange
@@ -431,16 +431,16 @@ object Form1: TForm1
     end
     object Label14: TLabel
       Left = 8
-      Height = 17
-      Top = 120
-      Width = 34
+      Height = 15
+      Top = 114
+      Width = 33
       Caption = '10-СС'
       ParentColor = False
     end
     object Edit_R2_rank: TEdit
-      Left = 45
-      Height = 27
-      Top = 152
+      Left = 46
+      Height = 23
+      Top = 136
       Width = 396
       ReadOnly = True
       TabOrder = 2
@@ -448,16 +448,16 @@ object Form1: TForm1
     end
     object Label15: TLabel
       Left = 8
-      Height = 17
-      Top = 148
-      Width = 27
+      Height = 15
+      Top = 136
+      Width = 25
       Caption = 'Ранг'
       ParentColor = False
     end
     object Edit_R2_CRT: TEdit
       Left = 45
-      Height = 27
-      Top = 184
+      Height = 23
+      Top = 160
       Width = 397
       ReadOnly = True
       TabOrder = 3
@@ -465,70 +465,70 @@ object Form1: TForm1
     end
     object Label16: TLabel
       Left = 8
-      Height = 17
-      Top = 184
+      Height = 15
+      Top = 160
       Width = 23
       Caption = 'КТО'
       ParentColor = False
     end
     object BTN_R2_to_mem: TButton
-      Left = 453
+      Left = 450
       Height = 25
-      Top = 16
+      Top = 8
       Width = 91
       Caption = 'В память'
       OnClick = BTN_R2_to_memClick
       TabOrder = 4
     end
     object BTN_R2_from_mem: TButton
-      Left = 453
+      Left = 450
       Height = 25
-      Top = 40
+      Top = 32
       Width = 91
       Caption = 'Из памяти'
       OnClick = BTN_R2_from_memClick
       TabOrder = 5
     end
     object BTN_R2_swap_mem: TButton
-      Left = 453
+      Left = 450
       Height = 25
-      Top = 64
+      Top = 56
       Width = 91
       Caption = 'Обмен память'
       OnClick = BTN_R2_swap_memClick
       TabOrder = 6
     end
     object BTN_R2_to_R1: TButton
-      Left = 453
+      Left = 450
       Height = 25
-      Top = 96
+      Top = 86
       Width = 91
       Caption = 'В регистр 1'
       OnClick = BTN_R2_to_R1Click
       TabOrder = 7
     end
     object BTN_R2_from_R1: TButton
-      Left = 453
+      Left = 450
       Height = 25
-      Top = 120
+      Top = 110
       Width = 91
       Caption = 'Из регистра 1'
       OnClick = BTN_R2_from_R1Click
       TabOrder = 8
     end
     object BTN_R2_swap_R1: TButton
-      Left = 453
+      Left = 450
       Height = 25
-      Top = 144
+      Top = 134
       Width = 91
       Caption = 'Обмен'
       OnClick = BTN_R2_swap_R1Click
       TabOrder = 9
     end
     object BTN_cmp1: TButton
-      Left = 453
+      Left = 450
       Height = 25
-      Top = 176
+      Top = 158
       Width = 91
       Caption = 'Сравнение'
       OnClick = BTN_cmpClick
@@ -537,17 +537,17 @@ object Form1: TForm1
   end
   object Panel1: TPanel
     Left = 0
-    Height = 442
+    Height = 388
     Top = 0
-    Width = 442
+    Width = 441
     Caption = 'Panel1'
-    ClientHeight = 442
-    ClientWidth = 442
+    ClientHeight = 388
+    ClientWidth = 441
     TabOrder = 4
     object BTN_n_ext: TButton
       Left = 298
-      Height = 27
-      Top = 48
+      Height = 22
+      Top = 40
       Width = 30
       Caption = 'OK'
       OnClick = BTN_n_extClick
@@ -555,8 +555,8 @@ object Form1: TForm1
     end
     object Edit_n_ext: TEdit
       Left = 266
-      Height = 27
-      Top = 48
+      Height = 23
+      Top = 40
       Width = 32
       NumbersOnly = True
       TabOrder = 1
@@ -564,16 +564,16 @@ object Form1: TForm1
     end
     object Label5: TLabel
       Left = 178
-      Height = 17
-      Top = 48
-      Width = 83
+      Height = 15
+      Top = 40
+      Width = 76
       Caption = 'Расширенная'
       ParentColor = False
     end
     object BTN_n: TButton
       Left = 138
-      Height = 27
-      Top = 48
+      Height = 20
+      Top = 40
       Width = 30
       Caption = 'OK'
       OnClick = BTN_nClick
@@ -581,25 +581,25 @@ object Form1: TForm1
     end
     object BTN_primes: TButton
       Left = 356
-      Height = 25
-      Top = 48
+      Height = 20
+      Top = 40
       Width = 80
       Caption = 'Все простые'
       OnClick = BTN_primesClick
       TabOrder = 3
     end
     object Label1: TLabel
-      Left = 2
-      Height = 17
-      Top = 48
-      Width = 95
+      Left = 8
+      Height = 15
+      Top = 40
+      Width = 89
       Caption = 'Оснований СОК'
       ParentColor = False
     end
     object Edit_n: TEdit
       Left = 106
-      Height = 27
-      Top = 48
+      Height = 23
+      Top = 40
       Width = 32
       NumbersOnly = True
       TabOrder = 4
@@ -607,9 +607,9 @@ object Form1: TForm1
     end
     object SG_P_basis: TStringGrid
       Left = 2
-      Height = 356
-      Top = 80
-      Width = 434
+      Height = 320
+      Top = 64
+      Width = 438
       ColCount = 3
       DefaultColWidth = 32
       Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goEditing, goSmoothScroll]
@@ -619,16 +619,16 @@ object Form1: TForm1
       OnEditingDone = SG_P_basisEditingDone
     end
     object Label6: TLabel
-      Left = 2
-      Height = 17
+      Left = 8
+      Height = 15
       Top = 0
-      Width = 85
+      Width = 80
       Caption = 'Диапазон СОК'
       ParentColor = False
     end
     object Edit_PP: TEdit
       Left = 2
-      Height = 27
+      Height = 23
       Top = 16
       Width = 434
       ReadOnly = True

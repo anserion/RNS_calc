@@ -330,7 +330,7 @@ begin
   for k:=1 to max_n do mem_RNS[k]:=0;
 
   Calc_Primes;
-  n:=10; n_ext:=20; n_dec:=64; n_dec_ext:=75;
+  n:=10; n_ext:=20; n_dec:=200; n_dec_ext:=200;
   Edit_n.text:=IntToStr(n);
   Edit_n_ext.text:=IntToStr(n_ext);
 
