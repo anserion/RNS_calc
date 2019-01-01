@@ -13,8 +13,8 @@ type
   { TForm1 }
 
   TForm1 = class(TForm)
-    BTN_cmp: TButton;
-    BTN_cmp1: TButton;
+    BTN_R1_inv: TButton;
+    BTN_R2_neg: TButton;
     BTN_R2_swap_mem1: TButton;
     BTN_R2_swap_mem: TButton;
     BTN_accum_to_mem: TButton;
@@ -32,6 +32,7 @@ type
     BTN_add: TButton;
     BTN_n: TButton;
     BTN_R2_swap_R1: TButton;
+    BTN_formal_div: TButton;
     BTN_sub: TButton;
     BTN_mul: TButton;
     BTN_div: TButton;
@@ -65,8 +66,8 @@ type
     Label18: TLabel;
     Label19: TLabel;
     Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
+    Label_reg1: TLabel;
+    Label_reg2: TLabel;
     Label5: TLabel;
     Label6: TLabel;
     Label7: TLabel;
@@ -86,7 +87,8 @@ type
     procedure BTN_accum_swap_memClick(Sender: TObject);
     procedure BTN_accum_to_memClick(Sender: TObject);
     procedure BTN_addClick(Sender: TObject);
-    procedure BTN_cmpClick(Sender: TObject);
+    procedure BTN_formal_divClick(Sender: TObject);
+    procedure BTN_R1_invClick(Sender: TObject);
     procedure BTN_divClick(Sender: TObject);
     procedure BTN_mulClick(Sender: TObject);
     procedure BTN_R1_from_memClick(Sender: TObject);
@@ -95,6 +97,7 @@ type
     procedure BTN_R1_to_R2Click(Sender: TObject);
     procedure BTN_R2_from_memClick(Sender: TObject);
     procedure BTN_R2_from_R1Click(Sender: TObject);
+    procedure BTN_R2_negClick(Sender: TObject);
     procedure BTN_R2_swap_mem1Click(Sender: TObject);
     procedure BTN_R2_swap_memClick(Sender: TObject);
     procedure BTN_R1_swap_R2Click(Sender: TObject);
@@ -254,7 +257,7 @@ begin
 end;
 
 procedure TForm1.refresh_visual;
-var k:integer;
+var k:integer; tmp:integer;
 begin
   Accum_MRS:=RNS_to_MRS(n,Accum_RNS,p_sv);
   R1_MRS:=RNS_to_MRS(n,R1_RNS,p_sv);
@@ -318,6 +321,25 @@ begin
 
   mem_CRT_dec:=RNS_to_dec_CRT(n,n_ext,n_dec_ext,mem_RNS,p_sv);
   Edit_mem_CRT.text:=modulo_to_str(n_dec_ext,mem_CRT_dec);
+
+  tmp:=RNS_cmp(n,R1_rns,R2_rns,p_sv);
+  if tmp=0 then
+  begin
+        label_reg1.caption:='Первый регистр и второй регистр равны';
+        label_reg2.caption:='Второй регистр и первый регистр равны';
+  end;
+
+  if tmp<0 then
+  begin
+     label_reg1.caption:='Первый регистр меньше, чем второй регистр';
+     label_reg2.caption:='Второй регистр больше, чем первый регистр';
+  end;
+
+  if tmp>0 then
+  begin
+     label_reg1.caption:='Первый регистр больше, чем второй регистр';
+     label_reg2.caption:='Второй регистр меньше, чем первый регистр';
+  end;
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
@@ -428,14 +450,18 @@ begin
      refresh_visual;
 end;
 
-procedure TForm1.BTN_cmpClick(Sender: TObject);
-var s:string; tmp:integer;
+procedure TForm1.BTN_formal_divClick(Sender: TObject);
 begin
-     tmp:=RNS_cmp(n,R1_rns,R2_rns,p_sv);
-     if tmp=0 then s:='регистры равны';
-     if tmp<0 then s:='второй регистр больше';
-     if tmp>0 then s:='первый регистр больше';
-     MessageBox(0,PChar(s),'сравнение',MB_OK);
+  accum_RNS:=RNS_formal_div(n,R1_RNS,R2_RNS,p_sv);
+  refresh_visual;
+end;
+
+procedure TForm1.BTN_R1_invClick(Sender: TObject);
+var tmp:T_RNS;
+begin
+  modulo_set(n,1,tmp);
+  accum_RNS:=RNS_formal_div(n,tmp,R1_RNS,p_sv);
+  refresh_visual;
 end;
 
 procedure TForm1.BTN_accum_to_memClick(Sender: TObject);
@@ -504,6 +530,14 @@ end;
 procedure TForm1.BTN_R2_from_R1Click(Sender: TObject);
 begin
   modulo_copy(n,R1_RNS,R2_RNS);
+  refresh_visual;
+end;
+
+procedure TForm1.BTN_R2_negClick(Sender: TObject);
+var tmp:T_RNS;
+begin
+  modulo_set(n,0,tmp);
+  accum_RNS:=RNS_sub(n,tmp,R2_RNS,p_sv);
   refresh_visual;
 end;
 
